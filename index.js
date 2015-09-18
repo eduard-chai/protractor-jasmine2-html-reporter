@@ -156,7 +156,7 @@ function Jasmine2HTMLReporter(options) {
 
 
                     //Folder structure and filename
-                    screenshotPath = path.join(self.savePath + self.screenshotsFolder, spec.screenshot);
+                    screenshotPath = path.join(self.savePath + '/' + self.screenshotsFolder, spec.screenshot);
 
                     mkdirp(path.dirname(screenshotPath), function (err) {
                         if (err) {
@@ -271,8 +271,8 @@ function Jasmine2HTMLReporter(options) {
             html += specAsHtml(spec);
                 html += '<div class="resume">';
                 if (spec.screenshot !== UNDEFINED){
-                    html += '<a href="' + self.screenshotsFolder + '/' + spec.screenshot + '">';
-                    html += '<img src="' + self.screenshotsFolder + '/' + spec.screenshot + '" width="100" height="100" />';
+                    html += '<a href="' + self.screenshotsFolder + spec.screenshot + '">';
+                    html += '<img src="' + self.screenshotsFolder + spec.screenshot + '" width="100" height="100" />';
                     html += '</a>';
                 }
                 html += '<br />';
